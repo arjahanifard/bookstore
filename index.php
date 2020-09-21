@@ -1,6 +1,4 @@
-<?php
-$looking = isset($_GET['title']) || isset($_GET['author']);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +9,13 @@ $looking = isset($_GET['title']) || isset($_GET['author']);
     </head>
     <body>
         <p>
-            you are <?php echo $_COOKIE['username'];?>
+           <?php
+           if (isset($_COOKIE['username'])){
+               echo "you are ".$_COOKIE['username'];
+           } else {
+           echo "you are not authenticated";    
+           }
+           ?>
         </p>
         <p>are you lookin for a book?<?php echo (int) $looking; ?></p>
         <p>

@@ -17,22 +17,36 @@
            }
            ?>
         </p>
-        <p>are you lookin for a book?<?php echo (int) $looking; ?></p>
+        <?php
+        if (isset($_GET['title']) && isset($_GET['author'])){
+            ?>
         <p>
             the book you are looking for is
         </p>
         <ul>
             <li>
                 <b>
-                    title
-                </b>:<?php echo $_GET['title']; ?>
+                    Title
+                </b>
+                : <?php 
+                echo $_GET['title'];?>
             </li>
             <li>
                 <b>
                     Author
-                </b>:<?php echo $_GET['author'];?>
+                </b>
+                :<?php
+                echo $_GET['author'];?>
             </li>
         </ul>
+        <?php
+        } else {
+        ?>
+        <p>
+            you are not looking for a book?
+        </p>
+        <?php
+        }
+        ?>
     </body>
 </html>
-

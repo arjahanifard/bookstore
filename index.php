@@ -1,4 +1,7 @@
 
+<?php
+require_once 'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,11 +13,7 @@
     <body>
         <p>
            <?php
-           if (isset($_COOKIE['username'])){
-               echo "you are ".$_COOKIE['username'];
-           } else {
-           echo "you are not authenticated";    
-           }
+          echo loginMessage();
            ?>
         </p>
         <?php
@@ -76,15 +75,9 @@
             <?php
                     foreach ($books as $book):?>
             <li>
-                <i>
-                    <?php echo $book['title'];?>
-                </i>
-                - <?php echo $book['author'];?>
-                <?php if (!$book['available']):?>
-                <b>
-                    Not available
-                </b>
-                <?php                        endif;?>         
+                <?php
+                echo printableTitle($book);
+                ?>
             </li>
             <?php                    endforeach;?>
         </ul>

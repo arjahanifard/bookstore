@@ -1,7 +1,7 @@
 [
 {
                 "title" : "to kill a mochingbird",
-                'author" : "harper lee",
+                "author" : "harper lee",
                 "available" : true,
                 "pages" : 336,
                 "isbn" : 9780061120084
@@ -20,4 +20,4 @@
                 "page":457,
                 "isbn":9785267006323
             },
-        ];
+        ]

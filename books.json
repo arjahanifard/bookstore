@@ -1,0 +1,23 @@
+[
+{
+                "title" : "to kill a mochingbird",
+                'author" : "harper lee",
+                "available" : true,
+                "pages" : 336,
+                "isbn" : 9780061120084
+           },
+            {
+                "title" : "1984",
+                "author" : "george orwell",
+                "available": true,
+                "pages":267,
+                "isbn":9780547249643
+            },
+           {
+                "title":"one hundres years of solitude",
+                "author":"gabriel garsia marquez",
+                "available":true,
+                "page":457,
+                "isbn":9785267006323
+            },
+        ];

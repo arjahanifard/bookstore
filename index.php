@@ -20,8 +20,10 @@ require_once 'functions.php';
     $booksJson = file_get_contents(__DIR__,'books.json');
     $books = json_decode($booksJson,true);
     if (isset($_GET['title'])){
-        echo '<p>you are not looking for a book?</p>';
+        echo '<p>Lokking for <b>'.$_GET['title'].'</b></p>';
         
+    }else{
+        echo '<p>You are not looking for a book?</p>';
     }
     ?>
         <ul>

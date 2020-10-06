@@ -17,11 +17,11 @@ require_once 'functions.php';
            ?>
         </p>
         <?php
-    $booksJson = file_get_contents(__DIR__,'books.json');
+    
+    $booksJson = file_get_contents('books.json');
     $books = json_decode($booksJson,true);
     if (isset($_GET['title'])){
         echo '<p>Lokking for <b>'.$_GET['title'].'</b></p>';
-        
     }else{
         echo '<p>You are not looking for a book?</p>';
     }
@@ -30,7 +30,7 @@ require_once 'functions.php';
             <?php
                     foreach ($books as $book):?>
             <li>
-                <a href="?title=<?php echo $book['title'];?>">
+                <a href="?title=<?php echo $book['title'];?>"
                     <?php echo printableTitle($book);?>
                 </a>
             </li>

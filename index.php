@@ -18,10 +18,16 @@ require_once 'functions.php';
         </p>
         <?php
     
-    $booksJson = file_get_contents('books.json');
+    $booksJson = file_get_contents(__DIR__.'/books.json');
     $books = json_decode($booksJson,true);
     if (isset($_GET['title'])){
         echo '<p>Lokking for <b>'.$_GET['title'].'</b></p>';
+        if (bookingBook($books, $_GET['title'])){
+            echo 'Booked!';
+          updateBooks($books);
+        } else {
+            echo 'The book is not available ....';    
+        }
     }else{
         echo '<p>You are not looking for a book?</p>';
     }

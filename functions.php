@@ -15,7 +15,7 @@ function printableTitle(array $book):string{
 }
 function bookingBook(array &$books,string $title):bool{
     foreach ($books as $key => $book){
-        if ($books['title']==$title){
+        if ($book['title']==$title){
             if ($book['available']){
                 $books[$key]['available'] = false;
                 return true;
@@ -24,12 +24,11 @@ function bookingBook(array &$books,string $title):bool{
             }
         }
     }
-    return false;
-    
-            }
+    return false;   
+}
 function  updateBooks(array $books){
-    $bookJson = json_encode($books);
-    file_put_contents(__DIR__.'/books.json', $bookJson);               
+    $booksJson = json_encode($books);
+    file_put_contents(__DIR__.'/books.json', $booksJson);               
     }
 
 

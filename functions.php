@@ -7,10 +7,11 @@ function loginMessage(){
     }
 }
 function printableTitle(array $book):string{
-    $result = '<i>' . $book['title'] . '<i> - '.$book['author'];
+    $result = '<i>' . $book['title'] . '</i> - '.$book['author'];
     if (!$book['available']){
         $result .= ' <b>Not availbale</b>';
     }
+    return $result;
 }
 function bookingBook(array &$books,string $title):bool{
     foreach ($books as $key => $book){
@@ -26,4 +27,9 @@ function bookingBook(array &$books,string $title):bool{
     return false;
     
             }
+function  updateBooks(array $books){
+    $bookJson = json_encode($books);
+    file_put_contents(__DIR__.'/books.json', $bookJson);               
+    }
+
 

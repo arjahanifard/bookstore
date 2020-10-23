@@ -12,6 +12,7 @@ class Customer extends Person{
         string $surname,
         string $email
             ) {
+                parent::__construct($firstname, $surname);
        if (empty($id)){
            $this->id = ++self::$lastId;
         }else{
